@@ -1,5 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
+import { appURLs } from '../enums/url'
+
 import {
 	StyleSheet,
 	Text,
@@ -18,7 +20,8 @@ const LogInScreen = (props) => {
 
 	//validation
 	const submit = () => {
-		var url = `http://192.168.1.6:8080/user/userById/${email}`;
+		
+		var url = appURLs.BaseURL+`user/userById/${email}`;
 
 		axios
 			.get(url)
@@ -30,6 +33,8 @@ const LogInScreen = (props) => {
 				) {
 					if (res.data.data[0].role === 'gramasewaka') {
 						props.navigation.navigate('main');
+					}else if(res.data.data[0].role === 'User'){
+						props.navigation.navigate('userHome');
 					}
 				} else {
 					alert('Invalid Password or Email');
