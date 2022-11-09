@@ -125,6 +125,28 @@ formValidation = () =>{
     }
     console.log(data);
 
+    var url = appURLs.BaseURL+'createEvent';
+    axios
+    .get(url)
+    .then((res)=>{
+        // if(res.data.success){
+        //   toastMsg("Stock added Successfully!",'success')
+        //   window.location.href='/stockManagement';
+        //   this.setState(
+        //     {
+        //       product_id:"",
+        //       product_type:"",
+        //       product_name:"",
+        //       regular_price:"",
+        //       status:"",
+        //       stock_count:"",
+        //       reg_date:""
+        //     }
+        //   )
+        // }
+      })
+    
+
     
 
 }
