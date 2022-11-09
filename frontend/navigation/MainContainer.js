@@ -5,13 +5,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 // Screens
 import HomeScreen from './screens/HomeScreen';
-import DetailsScreen from './screens/DetailsScreen';
+import AllCasesScreen from './screens/DetailsScreen';
 import SettingsScreen from './screens/SettingsScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 //Screen names
 const homeName = 'Home';
-const detailsName = 'Details';
-const settingsName = 'Settings';
+const allCases = 'All Cases';
+const settingsName = 'Family Details';
+const profile = 'Profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,13 +28,14 @@ function MainContainer() {
 
 					if (rn === homeName) {
 						iconName = focused ? 'home' : 'home-outline';
-					} else if (rn === detailsName) {
+					} else if (rn === allCases) {
 						iconName = focused ? 'list' : 'list-outline';
 					} else if (rn === settingsName) {
 						iconName = focused ? 'settings' : 'settings-outline';
+					} else if (rn === profile) {
+						iconName = focused ? 'person' : 'person-outline';
 					}
 
-					// You can return any component that you like here!
 					return <Ionicons name={iconName} size={size} color={color} />;
 				},
 			})}
@@ -44,8 +47,9 @@ function MainContainer() {
 			}}
 		>
 			<Tab.Screen name={homeName} component={HomeScreen} />
-			<Tab.Screen name={detailsName} component={DetailsScreen} />
+			<Tab.Screen name={allCases} component={AllCasesScreen} />
 			<Tab.Screen name={settingsName} component={SettingsScreen} />
+			<Tab.Screen name={profile} component={ProfileScreen} />
 		</Tab.Navigator>
 	);
 }
