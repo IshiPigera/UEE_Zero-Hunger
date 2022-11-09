@@ -12,6 +12,8 @@ import LogInScreen from './src/LogInScreen';
 import RegisterScreen from './src/RegisterScreen';
 import HomeMainPage from './FrontUser/NormalUser/HomeMainPage';
 
+import volunteerHomePage from './FrontUser/VolUser/volenteerHomePage';
+
 const { Navigator, Screen } = createStackNavigator();
 
 const AppNavigator = () => (
@@ -23,6 +25,7 @@ const AppNavigator = () => (
 			<Screen name='main' component={MainContainer} />
 			<Screen name='register' component={RegisterScreen} />
 			<Screen name='userHome' component={HomeMainPage} />
+			<Screen name='volenteerHome' component={volunteerHomePage}/>
 		</Navigator>
 	</NavigationContainer>
 );
