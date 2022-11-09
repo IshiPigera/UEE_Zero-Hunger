@@ -1,5 +1,12 @@
-import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+// Screens
+import NewsFeed from './NewsFeed';
+
+
 
 export default class HomeMainPage extends React.Component {
 
