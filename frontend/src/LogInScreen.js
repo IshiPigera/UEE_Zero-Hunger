@@ -34,6 +34,8 @@ const LogInScreen = (props) => {
 					) {
 						if (res.data.data[0].role === 'gramasewaka') {
 							props.navigation.navigate('main');
+						} else if (res.data.data[0].role === 'foodOfficer') {
+							props.navigation.navigate('foodOfficerHome');
 						} else if (res.data.data[0].role === 'User') {
 							props.navigation.navigate('userHome');
 						} else if (res.data.data[0].role === 'Volunteer') {

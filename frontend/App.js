@@ -13,6 +13,8 @@ import HomeMainPage from './FrontUser/NormalUser/HomeMainPage';
 
 import volunteerHomePage from './FrontUser/VolUser/volenteerHomePage';
 
+import foodOfficerHomePage from './GovUser/FoodOfficer/foodOfficerHomePage';
+
 const { Navigator, Screen } = createStackNavigator();
 
 const AppNavigator = () => (
@@ -24,6 +26,10 @@ const AppNavigator = () => (
 			<Screen name='register' component={RegisterScreen} />
 			<Screen name='userHome' component={HomeMainPage} />
 			<Screen name='volenteerHome' component={volunteerHomePage}/>
+
+			{/* food officer */}
+			<Screen name='foodOfficerHome' component={foodOfficerHomePage} />
+
 		</Navigator>
 	</NavigationContainer>
 );
