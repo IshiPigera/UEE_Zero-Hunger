@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import HomePage from './HomePage';
 
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';

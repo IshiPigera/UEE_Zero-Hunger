@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
-import { appURLs } from '../enums/url'
+import { appURLs } from '../enums/url';
 
 import {
 	StyleSheet,
@@ -13,39 +13,45 @@ import {
 } from 'react-native';
 
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LogInScreen = (props) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
 	//validation
-	const submit = () => {
-		
-		var url = appURLs.BaseURL+`user/userById/${email}`;
-
-		axios
-			.get(url)
-			.then((res) => {
-				console.log(res.data.data[0].role);
-				if (
-					res.data.data[0].email === email &&
-					res.data.data[0].password === password
-				) {
-					if (res.data.data[0].role === 'gramasewaka') {
-						props.navigation.navigate('main');
-					}else if(res.data.data[0].role === 'User'){
-						props.navigation.navigate('userHome');
-					}else if(res.data.data[0].role === 'Volunteer'){
+	const submit = async () => {
+		try {
+			var url = appURLs.BaseURL + `user/userById/${email}`;
+			axios
+				.get(url)
+				.then(async (res) => {
+					console.log(res.data.data[0].email);
+					await AsyncStorage.setItem('user', res.data.data[0].email);
+					if (
+						res.data.data[0].email === email &&
+						res.data.data[0].password === password
+					) {
+						if (res.data.data[0].role === 'gramasewaka') {
+							props.navigation.navigate('main');
+						} else if (res.data.data[0].role === 'User') {
+							props.navigation.navigate('userHome');
+						}else if(res.data.data[0].role === 'Volunteer'){
 						props.navigation.navigate('volenteerHome');
+					} else {
+						alert('Invalid Password or Email');
+
 					}
-				} else {
-					alert('Invalid Password or Email');
-				}
-			})
-			.catch((err) => {
-				alert('No User Found');
-			});
+				})
+
+				.catch((err) => {
+					alert('No User Found');
+				});
+		} catch (error) {
+			alert(error);
+		}
 	};
+
 	const handleEmail = (email) => {
 		setEmail(email);
 	};
