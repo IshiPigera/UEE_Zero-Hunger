@@ -21,9 +21,11 @@ app.route('/').get((req, res) => {
 
 //import routes
 const userAPI = require('./src/api/user.api');
+const foodOfficerAPI = require('./src/api/foodOfficer.api');
 
 // Define routes
 app.use('/user', userAPI());
+app.use('/foodOfficer', foodOfficerAPI());
 
 // Start listening to the server
 const PORT = process.env.PORT || 8080;
