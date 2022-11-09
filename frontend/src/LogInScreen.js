@@ -36,11 +36,11 @@ const LogInScreen = (props) => {
 							props.navigation.navigate('main');
 						} else if (res.data.data[0].role === 'User') {
 							props.navigation.navigate('userHome');
-						}else if(res.data.data[0].role === 'Volunteer'){
-						props.navigation.navigate('volenteerHome');
-					} else {
-						alert('Invalid Password or Email');
-
+						} else if (res.data.data[0].role === 'Volunteer') {
+							props.navigation.navigate('volenteerHome');
+						} else {
+							alert('Invalid Password or Email');
+						}
 					}
 				})
 
