@@ -39,7 +39,7 @@ export default class DonateCreation extends React.Component {
 
 
                     </View>
-                    <Image style={styles.image} source={require('../../assets/login.png')} />
+                    <Image style={styles.image} source={require('../../assets/donate.webp')} />
 
                 </View>
 
@@ -101,9 +101,9 @@ const styles = StyleSheet.create({
         borderWidth:3
 
     },image: {
-		width: 200,
-		height: 200,
-		marginTop: 190,
+		width: 300,
+		height: 300,
+		marginTop: 103,
 	},
 
 })
