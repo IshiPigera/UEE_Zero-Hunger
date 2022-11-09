@@ -5,9 +5,17 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 // Screens
 import NewsFeedPage from './NewsFeed';
+import DonateCreation from './DonateCreation';
+import DonateDonation from './DonateDonation';
+import Notification from './Notification';
+import Profile from './Profile';
 
 //Screen names
 const NewsFeed = 'NewsFeed';
+const CREATE = 'Create';
+const DONATE = 'Donate';
+const PROFILE = 'Profile';
+const NOTIFICATION = 'Notification';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,8 +32,16 @@ export default class HomeMainPage extends React.Component {
 					let rn = route.name;
 
 					if (rn === NewsFeed) {
-						iconName = focused ? 'NewsFeed' : 'home-outline';
-					} 
+						iconName = focused ? 'logo-buffer' : 'logo-buffer';
+					} else if (rn === CREATE) {
+						iconName = focused ? 'add' : 'add-outline';
+					} else if (rn === DONATE) {
+						iconName = focused ? 'md-heart' : 'md-heart-outline';
+					}else if (rn === NOTIFICATION) {
+						iconName = focused ? 'notifications' : 'notifications-outline';
+					}else if (rn === PROFILE) {
+						iconName = focused ? 'person' : 'person-outline';
+					}
 
 					// You can return any component that you like here!
 					return <Ionicons name={iconName} size={size} color={color} />;
@@ -38,9 +54,11 @@ export default class HomeMainPage extends React.Component {
 				style: { padding: 10, height: 70 },
 			}}
 		>
-			<Tab.Screen name={homeName} component={NewsFeedPage} />
-			{/* <Tab.Screen name={detailsName} component={DetailsScreen} />
-			<Tab.Screen name={settingsName} component={SettingsScreen} /> */}
+			<Tab.Screen name={NewsFeed} component={NewsFeedPage} />
+			<Tab.Screen name={CREATE} component={DonateCreation} />
+			<Tab.Screen name={DONATE} component={DonateDonation} />
+            <Tab.Screen name={NOTIFICATION} component={Notification} />
+            <Tab.Screen name={PROFILE} component={Profile} />
 		</Tab.Navigator>
         )
     }
