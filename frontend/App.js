@@ -10,6 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import HomePage from './src/HomePage';
 import LogInScreen from './src/LogInScreen';
 import RegisterScreen from './src/RegisterScreen';
+import HomeMainPage from './FrontUser/NormalUser/HomeMainPage';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -21,6 +22,7 @@ const AppNavigator = () => (
 			<Screen name='Login' component={LogInScreen} />
 			<Screen name='main' component={MainContainer} />
 			<Screen name='register' component={RegisterScreen} />
+			<Screen name='userHome' component={HomeMainPage} />
 		</Navigator>
 	</NavigationContainer>
 );

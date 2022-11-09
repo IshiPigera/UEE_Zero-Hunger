@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 
 import axios from 'axios';
+import { appURLs } from '../enums/url'
 
 const RegisterScreen = (props) => {
 	const [name, setName] = useState('');
@@ -42,7 +43,7 @@ const RegisterScreen = (props) => {
 
 	//create USer
 	const register = () => {
-		var url = 'http://192.168.1.6:8080/user/createUser';
+		var url =  appURLs.BaseURL + 'user/createUser';
 		var data = {
 			name,
 			email,
