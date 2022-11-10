@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
 	View,
 	Text,
@@ -12,7 +13,6 @@ export default function HomeScreen({ navigation }) {
 	return (
 		<ScrollView>
 			<View style={styles.container}>
-				<Image style={styles.image} source={require('../../../assets/Home.png')} />
 				<Text
 					style={{
 						fontSize: 26,
@@ -20,61 +20,115 @@ export default function HomeScreen({ navigation }) {
 						marginTop: 10,
 					}}
 				>
-					Welcome !
+					Welcome Dashboard!
 				</Text>
 				<View style={styles.body}>
-					<View style={styles.card}>
-						<Image
-							style={styles.cardImage}
-							source={require('../../../assets/all.png')}
-						/>
-						<Text
+					<View style={styles.card2}>
+					<Text 
 							style={{
-								fontSize: 30,
+								fontSize: 17,
 								fontWeight: 'bold',
-								marginLeft: 30,
+								marginLeft: 25,
 								marginTop: 17,
 							}}
 						>
-							All Cases
+							Projects
 						</Text>
+						<Image
+							style={styles.cardImage1}
+							source={require('../../../assets/project.png')}
+						/>
+					</View>
+	 
+				</View>
+				<View style={styles.body2}>
+					<View style={styles.card2}>
 						<Text
 							style={{
-								fontSize: 50,
+								fontSize: 17,
 								fontWeight: 'bold',
-								marginLeft: -75,
-								marginTop: 50,
+								marginLeft: 25,
+								marginTop: 17,
 							}}
 						>
-							3
+							Cases
 						</Text>
+						<Image
+							style={styles.cardImage2}
+							source={require('../../../assets/cases.png')}
+						/>
 					</View>
 				</View>
 				<View style={styles.body}>
 					<View style={styles.card2}>
 						<Text
 							style={{
-								fontSize: 30,
+								fontSize: 17,
 								fontWeight: 'bold',
-								marginLeft: 10,
+								marginLeft: 25,
 								marginTop: 17,
 							}}
 						>
-							All Employees
+							Donations
 						</Text>
+						<Image
+							style={styles.cardImage3}
+							source={require('../../../assets/donation.png')}
+						/>
+					</View>
+				</View>
+				<View style={styles.body2}>
+					<View style={styles.card2}>
 						<Text
 							style={{
-								fontSize: 50,
+								fontSize: 17,
 								fontWeight: 'bold',
-								marginLeft: -125,
-								marginTop: 50,
+								marginLeft: 22,
+								marginTop: 17,
 							}}
 						>
-							18
+							Gramasewaka
+						</Text>
+						<Image
+							style={styles.cardImage4}
+							source={require('../../../assets/grama.png')}
+						/>
+					</View>
+				</View>
+
+				<View style={styles.body}>
+					<View style={styles.card2}>
+						<Text
+							style={{
+								fontSize: 17,
+								fontWeight: 'bold',
+								marginLeft: 22,
+								marginTop: 10,
+							}}
+						>
+							Nutrition Plans
+						</Text>
+						<Image
+							style={styles.cardImage3}
+							source={require('../../../assets/nutrition.png')}
+						/>
+					</View>
+				</View>
+				<View style={styles.body2}>
+					<View style={styles.card2}>
+						<Text
+							style={{
+								fontSize: 17,
+								fontWeight: 'bold',
+								marginLeft: 22,
+								marginTop: 17,
+							}}
+						>
+							Profile
 						</Text>
 						<Image
 							style={styles.cardImage2}
-							source={require('../../../assets/emp.png')}
+							source={require('../../../assets/female.png')}
 						/>
 					</View>
 				</View>
@@ -94,25 +148,56 @@ const styles = StyleSheet.create({
 		height: 200,
 		marginBottom: 10,
 	},
-	cardImage: {
-		width: 127,
-		height: 120,
+ 
+	cardImage1: {
+		width: 60,
+		height: 60,
 		margin: 13,
 		backgroundColor: '#35C953',
-		borderRadius: 10,
+		// borderRadius: 10,
+		marginLeft: -50,
+		marginTop: 50,
 	},
 	cardImage2: {
-		width: 120,
-		height: 120,
+		width: 60,
+		height: 60,
 		margin: 13,
 		backgroundColor: '#35C953',
-		borderRadius: 10,
-		marginLeft: 80,
+		// borderRadius: 10,
+		marginLeft: -40,
+		marginTop: 50,
+	},
+	cardImage3: {
+		width: 60,
+		height: 60,
+		margin: 13,
+		backgroundColor: '#35C953',
+		// borderRadius: 10,
+		marginLeft: -65,
+		marginTop: 50,
+	},
+	cardImage4: {
+		width: 60,
+		height: 60,
+		margin: 13,
+		backgroundColor: '#35C953',
+		// borderRadius: 10,
+		marginLeft: -90,
+		marginTop: 50,
 	},
 	body: {
 		marginTop: 20,
 		backgroundColor: '#35C953',
-		width: 350,
+		width: 150,
+		height: 150,
+		borderRadius: 10,
+		marginLeft: -130,
+	},
+	body2: {
+		marginTop: -150,
+		marginLeft: 170,
+		backgroundColor: '#35C953',
+		width: 150,
 		height: 150,
 		borderRadius: 10,
 	},
@@ -136,5 +221,20 @@ const styles = StyleSheet.create({
 	},
 	card2: {
 		flexDirection: 'row',
+		backgroundColor: '#ffffff',
+		width: 130,
+		height: 130,
+		marginLeft: 10,
+		marginTop: 10,
+		borderRadius: 20,
+	},
+	card3: {
+		flexDirection: 'row',
+		backgroundColor: '#ffffff',
+		width: 130,
+		height: 130,
+		marginLeft: 30,
+		marginTop: 10,
+		borderRadius: 20,
 	},
 });
