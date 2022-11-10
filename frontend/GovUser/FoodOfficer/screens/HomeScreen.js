@@ -9,7 +9,7 @@ import {
 	StyleSheet,
 } from 'react-native';
 
-// import ProjectsScreen from './ProjectsScreen';
+// import ProfileScreen from './ProfileScreen';
 
 export default function HomeScreen({ navigation }) {
 	return (
