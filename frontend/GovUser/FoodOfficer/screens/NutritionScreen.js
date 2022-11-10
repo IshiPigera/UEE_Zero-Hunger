@@ -9,7 +9,8 @@ import {
 	StyleSheet,
 } from 'react-native';
 
-// import ProjectsScreen from './ProjectsScreen';
+ 
+import Strings from './Strings';
 
 export default function NutritionScreen({ navigation }) {
 	return (
@@ -60,6 +61,19 @@ export default function NutritionScreen({ navigation }) {
 						</Text>
 					
 					</View>
+					<TouchableOpacity
+							onPress={() =>
+								this.props.navigation.navigate(
+									Strings.screens.ProfileScreen
+								)
+							}
+							style={styles.btn}
+							activeOpacity={0.5}
+						>
+							<View>
+								<Text style={styles.btnTxt}>View More</Text>
+							</View>
+						</TouchableOpacity>
 				</View>
 				<View style={styles.body}>
 					<View style={styles.card2}>
@@ -90,9 +104,21 @@ export default function NutritionScreen({ navigation }) {
 							}}
 						>
 							To understand nutrition we need to know about nutrients
-						</Text>
-						 
+						</Text>	 
 					</View>
+					<TouchableOpacity
+							onPress={() =>
+								this.props.navigation.navigate(
+									Strings.screens.SupplierDashboardScreen
+								)
+							}
+							style={styles.btn}
+							activeOpacity={0.5}
+						>
+							<View>
+								<Text style={styles.btnTxt}>View More</Text>
+							</View>
+						</TouchableOpacity>
 				</View>
 
 				<View style={styles.body}>
@@ -127,6 +153,19 @@ export default function NutritionScreen({ navigation }) {
 						</Text>
 						 
 					</View>
+					<TouchableOpacity
+							onPress={() =>
+								this.props.navigation.navigate(
+									Strings.screens.ProfileScreen
+								)
+							}
+							style={styles.btn}
+							activeOpacity={0.5}
+						>
+							<View>
+								<Text style={styles.btnTxt}>View More</Text>
+							</View>
+						</TouchableOpacity>
 				</View>
 			</View>
 		</ScrollView>
@@ -183,7 +222,7 @@ const styles = StyleSheet.create({
 	},
 	body: {
 		marginTop: 20,
-		backgroundColor: '#35C953',
+		backgroundColor: '#ffffff',
 		width: 350,
 		height: 150,
 		borderRadius: 10,
@@ -192,7 +231,7 @@ const styles = StyleSheet.create({
 		marginTop: -150,
 		marginLeft: 170,
 		backgroundColor: '#35C953',
-		width: 150,
+		width: 170,
 		height: 150,
 		borderRadius: 10,
 	},
@@ -231,5 +270,14 @@ const styles = StyleSheet.create({
 		marginLeft: 30,
 		marginTop: 10,
 		borderRadius: 20,
+	},
+	btnTxt: {
+		backgroundColor: '#35C953',
+		fontSize: 15,
+		textAlign: 'center',
+		marginLeft: 50,
+		marginTop: -50,
+		width: 80,
+		height: 20,
 	},
 });
