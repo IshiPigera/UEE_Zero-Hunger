@@ -10,6 +10,7 @@ import CasesScreen from './screens/CasesScreen';
 import DonationsScreen from './screens/DonationsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import NutritionScreen from './screens/NutritionScreen';
+import ViewCase from './screens/ViewCase';
 
 //Screen names
 const homeName = 'Home';
@@ -18,6 +19,7 @@ const cases = 'Cases';
 const donations = 'Donations';
 const profile = 'Profile';
 const nutrition = 'Nutrition';
+const viewCase = 'ViewCase';
 
 const Tab = createBottomTabNavigator();
 
