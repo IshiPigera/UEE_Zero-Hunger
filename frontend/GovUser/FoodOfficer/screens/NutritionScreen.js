@@ -11,7 +11,7 @@ import {
 
 // import ProjectsScreen from './ProjectsScreen';
 
-export default function HomeScreen({ navigation }) {
+export default function NutritionScreen({ navigation }) {
 	return (
 		<ScrollView>
 			<View style={styles.container}>
@@ -22,7 +22,7 @@ export default function HomeScreen({ navigation }) {
 						marginTop: 10,
 					}}
 				>
-					Welcome Dashboard!
+					Nutrition Food Plans
 				</Text>
 				<View style={styles.body}>
 					<View style={styles.card2}>
@@ -31,17 +31,17 @@ export default function HomeScreen({ navigation }) {
 								fontSize: 17,
 								fontWeight: 'bold',
 								marginLeft: 25,
-								marginTop: 17,
+								marginTop: 12,
 							}}
 							onPress={() => Linking.openURL('http://google.com')}
 						>
-							Projects
+							Exploring  Nutrients
 						</Text>
 
 						 
 						<Image
 							style={styles.cardImage1}
-							source={require('../../../assets/project.png')}
+							source={require('../../../assets/nutrition.png')}
 						/>
 					</View>
 	 
@@ -50,18 +50,15 @@ export default function HomeScreen({ navigation }) {
 					<View style={styles.card2}>
 						<Text
 							style={{
-								fontSize: 17,
+								fontSize: 12,
 								fontWeight: 'bold',
 								marginLeft: 25,
 								marginTop: 17,
 							}}
 						>
-							Cases
+							To understand nutrition we need to know about nutrients
 						</Text>
-						<Image
-							style={styles.cardImage2}
-							source={require('../../../assets/cases.png')}
-						/>
+					
 					</View>
 				</View>
 				<View style={styles.body}>
@@ -71,14 +68,14 @@ export default function HomeScreen({ navigation }) {
 								fontSize: 17,
 								fontWeight: 'bold',
 								marginLeft: 25,
-								marginTop: 17,
+								marginTop: 12,
 							}}
 						>
-							Donations
+							Exploring  Nutrients
 						</Text>
 						<Image
 							style={styles.cardImage3}
-							source={require('../../../assets/donation.png')}
+							source={require('../../../assets/nutrition.png')}
 						/>
 					</View>
 				</View>
@@ -86,18 +83,15 @@ export default function HomeScreen({ navigation }) {
 					<View style={styles.card2}>
 						<Text
 							style={{
-								fontSize: 17,
+								fontSize: 12,
 								fontWeight: 'bold',
 								marginLeft: 22,
 								marginTop: 17,
 							}}
 						>
-							Gramasewaka
+							To understand nutrition we need to know about nutrients
 						</Text>
-						<Image
-							style={styles.cardImage4}
-							source={require('../../../assets/grama.png')}
-						/>
+						 
 					</View>
 				</View>
 
@@ -111,7 +105,7 @@ export default function HomeScreen({ navigation }) {
 								marginTop: 10,
 							}}
 						>
-							Nutrition Plans
+							Exploring  Nutrients
 						</Text>
 						<Image
 							style={styles.cardImage3}
@@ -123,18 +117,15 @@ export default function HomeScreen({ navigation }) {
 					<View style={styles.card2}>
 						<Text
 							style={{
-								fontSize: 17,
+								fontSize: 12,
 								fontWeight: 'bold',
 								marginLeft: 22,
 								marginTop: 17,
 							}}
 						>
-							Profile
+							To understand nutrition we need to know about nutrients
 						</Text>
-						<Image
-							style={styles.cardImage2}
-							source={require('../../../assets/female.png')}
-						/>
+						 
 					</View>
 				</View>
 			</View>
@@ -193,10 +184,9 @@ const styles = StyleSheet.create({
 	body: {
 		marginTop: 20,
 		backgroundColor: '#35C953',
-		width: 150,
+		width: 350,
 		height: 150,
 		borderRadius: 10,
-		marginLeft: -130,
 	},
 	body2: {
 		marginTop: -150,
@@ -227,7 +217,7 @@ const styles = StyleSheet.create({
 	card2: {
 		flexDirection: 'row',
 		backgroundColor: '#ffffff',
-		width: 130,
+		width: 150,
 		height: 130,
 		marginLeft: 10,
 		marginTop: 10,
