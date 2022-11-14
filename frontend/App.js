@@ -17,6 +17,8 @@ import ViewCase from './navigation/screens/ViewCase';
 import AssignFamily from './navigation/screens/AssignFamily';
 import UpdatePassword from './navigation/screens/UpdatePassword';
 
+import foodOfficerHomePage from './GovUser/FoodOfficer/foodOfficerHomePage';
+
 const { Navigator, Screen } = createStackNavigator();
 
 const AppNavigator = () => (
@@ -31,7 +33,15 @@ const AppNavigator = () => (
 			<Screen name='assignFam' component={AssignFamily} />
 			<Screen name='updatePass' component={UpdatePassword} />
 			<Screen name='userHome' component={HomeMainPage} />
+<<<<<<< HEAD
 			<Screen name='volenteerHome' component={volunteerHomePage} />
+=======
+			<Screen name='volenteerHome' component={volunteerHomePage}/>
+
+			{/* food officer */}
+			<Screen name='foodOfficerHome' component={foodOfficerHomePage} />
+
+>>>>>>> main
 		</Navigator>
 	</NavigationContainer>
 );
