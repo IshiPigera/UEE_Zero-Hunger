@@ -30,7 +30,23 @@ const getUserById = async (req, res) => {
 	}
 };
 
+// update
+const updateUserById = async (req, res) => {
+	const data = req.body;
+	console.log(req.params.email);
+	if (req.params.email) {
+		await User.findOneAndUpdate({ email: req.params.email }, data)
+			.then((data) => {
+				res.status(200).send({ data: data });
+			})
+			.catch((error) => {
+				res.status(500).send({ error: error.message });
+			});
+	}
+};
+
 module.exports = {
 	createUser,
 	getUserById,
+	updateUserById,
 };

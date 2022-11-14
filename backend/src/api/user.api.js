@@ -9,5 +9,8 @@ module.exports = function () {
 	//get method
 	router.get('/userById/:email', userController.getUserById);
 
+	//update
+	router.post('/updateuserById/:email', userController.updateUserById);
+
 	return router;
 };
