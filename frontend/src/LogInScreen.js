@@ -28,6 +28,7 @@ const LogInScreen = (props) => {
 				.then(async (res) => {
 					console.log(res.data.data[0].email);
 					await AsyncStorage.setItem('user', res.data.data[0].email);
+
 					if (
 						res.data.data[0].email === email &&
 						res.data.data[0].password === password
@@ -40,9 +41,9 @@ const LogInScreen = (props) => {
 							props.navigation.navigate('userHome');
 						} else if (res.data.data[0].role === 'Volunteer') {
 							props.navigation.navigate('volenteerHome');
-						} else {
-							alert('Invalid Password or Email');
 						}
+					} else {
+						alert('Invalid Password or Email');
 					}
 				})
 

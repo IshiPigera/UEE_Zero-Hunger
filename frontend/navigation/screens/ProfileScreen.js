@@ -18,6 +18,8 @@ export default function ProfileScreen(props) {
 
 	const [data, setData] = React.useState({});
 
+	const [name, setName] = React.useState('');
+
 	React.useEffect(() => {
 		(async () => {
 			const email = await AsyncStorage.getItem('user');
@@ -27,6 +29,7 @@ export default function ProfileScreen(props) {
 			axios.get(url).then((res) => {
 				console.log(res.data.data[0]);
 				setData(res.data.data[0]);
+				setName(res.data.data[0].name);
 			});
 		})();
 	}, []);
@@ -65,7 +68,7 @@ export default function ProfileScreen(props) {
 					<View style={styles.data}>
 						<Text style={{ fontSize: 19, fontWeight: 'bold' }}>Name :</Text>
 
-						<Text style={{ fontSize: 19 }}>{data.name}</Text>
+						<Text style={{ fontSize: 19 }}>{name}</Text>
 					</View>
 					<View style={styles.data}>
 						<Text style={{ fontSize: 19, fontWeight: 'bold' }}>Email :</Text>
@@ -80,17 +83,20 @@ export default function ProfileScreen(props) {
 						<Text style={{ fontSize: 19 }}>{data.contactNumber}</Text>
 					</View>
 					<View style={styles.data}>
-						<Text style={{ fontSize: 19, fontWeight: 'bold' }}>Name :</Text>
+						<Text style={{ fontSize: 19, fontWeight: 'bold' }}>Role :</Text>
 
-						<Text style={{ fontSize: 19 }}>{data.name}</Text>
+						<Text style={{ fontSize: 19 }}>{data.role}</Text>
 					</View>
 					<TouchableOpacity
 						style={styles.loginBtn}
-						onPress={() => props.navigation.navigate('Login')}
+						onPress={() => props.navigation.navigate('updatePass')}
 					>
 						<Text style={styles.loginText}>Reset Password</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={styles.loginBtn}>
+					<TouchableOpacity
+						style={styles.loginBtn}
+						onPress={() => props.navigation.navigate('update')}
+					>
 						<Text style={styles.loginText}>Update Profile</Text>
 					</TouchableOpacity>
 				</View>
